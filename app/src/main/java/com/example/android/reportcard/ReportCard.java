@@ -1,10 +1,62 @@
 package com.example.android.reportcard;
 
-import java.util.ArrayList;
-
 public class ReportCard {
 
-    //students names
+    //variables
+    private static final String SchoolName = "Miskatonic University";
+    private String studentName;
+    private String courseName;
+    private int [] grades = new int [5];
+
+    //getters
+    public String getStudentName(){
+        return this.studentName;
+    }
+
+    public String getCourseName(){
+        return this.courseName;
+    }
+
+    public int [] getGrades(){
+        return this.grades;
+    }
+
+    //setters
+    public void setStudentName(String studentName){
+        this.studentName = studentName;
+    }
+
+    public void setCourseName(String courseName){
+        this.courseName = courseName;
+    }
+
+    public void setGrades (int [] grades){
+        this.grades = grades;
+    }
+
+    //constructor
+    public ReportCard (String studentName, String courseName, int [] grades){
+        this.studentName = studentName;
+        this.courseName = courseName;
+        this.grades = grades;
+    }
+
+    //toString method
+    @Override
+    public String toString(){
+        return "the grades for student "
+                + getStudentName()
+                + " from "
+                + getCourseName()
+                + " at the "
+                + SchoolName
+                + " are: "
+                + getGrades()
+                + ".";
+    }
+
+    //OLD, WRONG CODE, NO NEED TO READ, JUST WANTED TO HAVE IT SAVED HERE
+    /*//students names
     final private String Adam = "Adam";
     final private String Mark = "Mark";
     final private String Steven = "Steven";
@@ -134,6 +186,6 @@ public class ReportCard {
         this.adamsGradesInHistory = adamsGradesInHistory;
         this.adamsGradesInMath = adamsGradesInMath;
         this.adamsGradesInBiology = adamsGradesInBiology;
-    }
+    }*/
 }
 
